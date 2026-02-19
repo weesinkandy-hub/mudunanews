@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ක්‍රීඩා පුවත් | Muduna Sports</title>
+    <style>
+        :root {
+            --sports-red: #e63946;
+            --sports-navy: #1d3557;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Oswald', 'Segoe UI', sans-serif; /* ක්‍රීඩා සඳහා ගැලපෙන තද අකුරු */
+            margin: 0;
+            background: #f1f4f9;
+            color: #333;
+        }
+
+        /* Sports Hero Banner */
+        .sports-banner {
+            background: linear-gradient(45deg, var(--sports-navy), var(--sports-red));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* ඇලයට කැපුණු මෝස්තරය */
+        }
+
+        .sports-banner h1 {
+            font-size: 50px;
+            margin: 0;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        /* Score Ticker (Live Scores) */
+        .score-ticker {
+            background: #000;
+            color: #ffd700;
+            padding: 10px 0;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .match-box {
+            border-right: 1px solid #444;
+            padding: 0 20px;
+        }
+
+        /* News Grid */
+        .sports-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0 15px;
+        }
+
+        .sports-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        .sports-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--sports-red);
+            color: white;
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .sports-img-container {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .sports-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .sports-card:hover .sports-img-container img {
+            transform: scale(1.1);
+        }
+
+        .sports-info {
+            padding: 20px;
+        }
+
+        .sports-info h3 {
+            font-size: 22px;
+            margin: 0 0 10px 0;
+            color: var(--sports-navy);
+        }
+
+        .btn-view {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--sports-red);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--sports-red);
+            transition: 0.3s;
+        }
+
+        .btn-view:hover {
+            letter-spacing: 1px;
+        }
+
+        /* Video Section UI */
+        .video-highlight {
+            background: var(--sports-navy);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="score-ticker">
+        <div class="match-box">🏏 SL 185/2 (20.0) | IND 180/8 (20.0) - SL WON</div>
+        <div class="match-box">⚽ MUN 2 - 1 CHE (FT)</div>
+        <div class="match-box">🏏 AUS vs NZ - STARTS AT 2.30 PM</div>
+    </div>
+
+    <header class="sports-banner">
+        <h1>MUDUNA SPORTS</h1>
+        <p>එකම තැනකින් සියලුම ක්‍රීඩා තොරතුරු</p>
+    </header>
+
+    <div class="sports-container">
+        
+        <article class="sports-card">
+            <span class="badge">CRICKET</span>
+            <div class="sports-img-container">
+                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=500" alt="Cricket">
+            </div>
+            <div class="sports-info">
+                <h3>ශ්‍රී ලංකා සිංහයන්ගෙන් ඉන්දියාවට අතිවිශාල පරාජයක්!</h3>
+                <p>පන්දුවාර විස්සයි විස්ස තරගාවලිය ජය ගනිමින් ශ්‍රී ලංකා කණ්ඩායම නව වාර්තාවක් පිහිටුවයි.</p>
+                <a href="#" class="btn-view">තව කියවන්න →</a>
+            </div>
+        </article>
+
+        <article class="sports-card">
+            <span class="badge">FOOTBALL</span>
+            <div class="sports-img-container">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=500" alt="Football">
+            </div>
+            <div class="sports-info">
+                <h3>ප්‍රිමියර් ලීග් පාපන්දු පිටියේ ලකුණු සටහන උඩුයටිකුරු වෙයි.</h3>
+                <p>ලෝක ප්‍රකට මැන්චෙස්ටර් යුනයිටඩ් කණ්ඩායම සිය ප්‍රසාද ලකුණු මට්ටම ඉහළට ගෙන එයි.</p>
+                <a href="#" class="btn-view">තව කියවන්න →</a>
+            </div>
+        </article>
+
+        <article class="sports-card">
+            <span class="badge">ATHLETICS</span>
+            <div class="sports-img-container">
+                <img src="https://images.unsplash.com/photo-1461896642191-325b035922bb?auto=format&fit=crop&q=80&w=500" alt="Athletics">
+            </div>
+            <div class="sports-info">
+                <h3>ආසියානු මලල ක්‍රීඩා තරගාවලියෙන් ශ්‍රී ලංකාවට රන් පදක්කමක්.</h3>
+                <p>මීටර් 100 ධාවන ඉසව්වෙන් ලංකාවේ ක්‍රීඩකයෙකු ලබාගත් සුවිශේෂී ජයග්‍රහණයක්.</p>
+                <a href="#" class="btn-view">තව කියවන්න →</a>
+            </div>
+        </article>
+
+    </div>
+
+    <section class="video-highlight">
+        <h2>VIDEO HIGHLIGHTS</h2>
+        <p>තරග වල වැදගත්ම අවස්ථා නරඹන්න</p>
+        <div style="background: rgba(255,255,255,0.1); padding: 50px; border-radius: 20px; max-width: 800px; margin: 20px auto;">
+            [VIDEO PLACEHOLDER - YouTube Player]
+        </div>
+    </section>
+
+</body>
+</html>

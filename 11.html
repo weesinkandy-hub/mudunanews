@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ෆැන්ටා නිර්මාණය වූ නාසි ජර්මනියේ කතාව | Muduna News</title>
+    <style>
+        :root {
+            --fanta-orange: #ff8c00;
+            --fanta-blue: #0047bb;
+            --dark-gray: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            background-color: #fffaf0;
+            color: var(--dark-gray);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Bubbles Animation */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 140, 0, 0.3);
+            border-radius: 50%;
+            bottom: -50px;
+            animation: rise 10s infinite ease-in;
+            z-index: -1;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-1000px); opacity: 0; }
+        }
+
+        /* Article Wrapper */
+        .fanta-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(255, 140, 0, 0.15);
+            position: relative;
+        }
+
+        /* Header Animation */
+        .fanta-header {
+            text-align: center;
+            border-bottom: 3px dashed var(--fanta-orange);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .fanta-title {
+            color: var(--fanta-orange);
+            font-size: 32px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .fanta-title:active {
+            transform: scale(0.95);
+        }
+
+        /* Bottle Opening Sound Effect UI */
+        .pop-instruction {
+            font-size: 12px;
+            color: var(--fanta-blue);
+            background: #eef4ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .highlight-text {
+            color: var(--fanta-blue);
+            font-weight: bold;
+        }
+
+        .history-box {
+            background: linear-gradient(135deg, #fff 0%, #fff3e0 100%);
+            border-left: 8px solid var(--fanta-orange);
+            padding: 25px;
+            font-style: italic;
+            margin: 30px 0;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ffe0b2;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
+            background: var(--fanta-orange);
+            color: white;
+        }
+
+        .step-card:hover a, .step-card:hover .highlight-text {
+            color: white;
+        }
+
+        /* Audio Element (Hidden) */
+        #soda-pop { display: none; }
+
+    </style>
+</head>
+<body>
+
+    <div class="bubble" style="left: 10%; width: 20px; height: 20px; animation-duration: 7s;"></div>
+    <div class="bubble" style="left: 80%; width: 40px; height: 40px; animation-duration: 12s;"></div>
+    <div class="bubble" style="left: 50%; width: 15px; height: 15px; animation-duration: 5s;"></div>
+
+    <audio id="popSound">
+        <source src="https://www.soundjay.com/misc/sounds/bottle-pop-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="fanta-container">
+        <div class="fanta-header">
+            <h1 class="fanta-title" onclick="playPop()">🍊 ෆැන්ටා (Fanta) නිර්මාණය වුණේ දෙවන ලෝක යුද්ධය මැදදී බව ඔබ දන්නවාද?</h1>
+            <span class="pop-instruction">මාතෘකාව Click කර "Pop" සද්දයට සවන් දෙන්න!</span>
+        </div>
+
+        <div class="article-content">
+            <p>අද අපි ආසාවෙන් බොන දොඩම් රසැති "ෆැන්ටා" (Fanta) බීම නිර්මාණය වුණේ දෙවන ලෝක යුද්ධය මැදදී නාසි ජර්මනියේදීය. යුද්ධයට කලින් ජර්මනිය කියන්නේ කොකා කෝලා සමාගමේ විශාලතම වෙළඳපොළක් වූ නමුත් යුද්ධයත් සමඟ සියල්ල වෙනස් විය.</p>
+
+            <div class="history-box">
+                "ඇමරිකාව ජර්මනියට භාණ්ඩ යැවීම තහනම් කිරීම (Embargo) නිසා, කොකා කෝලා වට්ටෝරුවට අවශ්‍ය සිරප් (Syrup) ගෙන්වා ගැනීමට නොහැකි විය."
+            </div>
+
+            <h3 style="color: var(--fanta-orange);">🏭 මැක්ස් කීත්ගේ අලුත් සොයාගැනීම</h3>
+            <p>කර්මාන්ත ශාලාව වසා දැමීමේ අවදානම හමුවේ, එහි ප්‍රධානියා වූ <span class="highlight-text">මැක්ස් කීත් (Max Keith)</span> අපූරු තීරණයක් ගත්තේය. ඔහු ජර්මනිය තුළ ඉතිරිව තිබූ දේවල් වලින් අලුත් බීමක් හැදීමට අත්හදා බැලීම් කළේය.</p>
+
+            <div class="step-card">
+                <div>🍎 <strong>අමුද්‍රව්‍ය:</strong> ඔහු පාවිච්චි කළේ චීස් හදද්දී ඉතුරු වන වතුර (Whey) සහ ඇපල් තන්තු (Apple fiber) වගේ ඉවතලන දේවල්ය.</div>
+            </div>
+
+            <div class="step-card">
+                <div>💡 <strong>නම:</strong> ඔහු මෙය "Fanta" ලෙස නම් කළේ ජර්මානු භාෂාවේ "Fantasie" (පරිකල්පනය) යන වචනය ඇසුරෙනි.</div>
+            </div>
+
+            <p>යුද්ධ කාලයේ සීනි හිඟ වූ නිසා, ජර්මානු ගෘහණියන් මෙම ෆැන්ටා බීම කෑම පිසීමට (Soup වලට රසකාරකයක් ලෙස) පවා භාවිතා කළ බව ඉතිහාසයේ සඳහන් වේ.</p>
+
+            <div class="history-box" style="border-left-color: var(--fanta-blue);">
+                යුද්ධයෙන් පසු කොකා කෝලා සමාගම නැවත ජර්මනියට පැමිණි අතර, ඔවුන් මෙම ෆැන්ටා වට්ටෝරුව දොඩම් රසයට (Orange flavor) වෙනස් කර ලෝකය පුරා ප්‍රචලිත කළේය.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playPop() {
+            var sound = document.getElementById("popSound");
+            sound.play();
+        }
+    </script>
+
+</body>
+</html>

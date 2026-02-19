@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muduna News | මුදුන පුවත්</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header කොටස */
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #cc0000; /* Red line */
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-area img {
+            height: 60px; /* ලෝගෝ එකේ ප්‍රමාණය */
+            margin-right: 15px;
+        }
+
+        .site-title {
+            color: #003366; /* Blue color */
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #003366; /* Deep Blue */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #cc0000; /* Red hover */
+        }
+
+        /* ප්‍රධාන පුවත් සැකසුම */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 15px;
+        }
+
+        .news-tag {
+            background-color: #cc0000;
+            color: white;
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            color: #003366;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        /* Read More Button */
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #003366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="https://zeno.fm/_ipx/_/https://images.zeno.fm/CMpQy9vic59D4SwEYFkhjqmybAtQVmGgUXRk04q_R14/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvZjhjNTY3NGQtMDNjYi00ZDE3LWI4NDctMTU2NjYxYmJhYjdjL2ltYWdlLz91PTE3NzEzMTM3MTAwMDA.webp" alt="Muduna News Logo"> 
+            <h1 class="site-title">MUDUNA NEWS</h1>
+        </div>
+    </header>
+<div class="breaking-news-container">
+    <div class="breaking-label">
+        BREAKING NEWS
+    </div>
+    <div class="breaking-content">
+        <div class="marquee-text">
+            <span>🔴 හදිසි පුවත: දිවයිනේ ප්‍රදේශ කිහිපයකට අද තද වැසි අපේක්ෂා කෙරේ.</span>
+            <span>🔴 විශේෂ නිවේදනය: හෙට දිනයේ සිට නව ප්‍රවාහන සේවා ආරම්භ කෙරේ.</span>
+            <span>🔴 ක්‍රීඩා: ශ්‍රී ලංකා කණ්ඩායම අද පැවති තරගයෙන් විශිෂ්ට ජයක් ලබයි.</span>
+            <span>🔴 මුදුන පුවත් (Muduna News): වඩාත් විශ්වාසදායක පුවත් සේවාව.</span>
+        </div>
+    </div>
+</div>
+<style>
+    /* Breaking News Bar එකේ ලස්සන (CSS) */
+    .breaking-news-container {
+        display: flex;
+        background-color: #00264d; /* Dark Blue */
+        height: 40px;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #cc0000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .breaking-label {
+        background-color: #cc0000; /* Red */
+        color: white;
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* Arrow shape එක ලේබල් එකේ අගට එකතු කිරීම */
+    .breaking-label::after {
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 0;
+        border-left: 15px solid #cc0000;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+    }
+
+    .breaking-content {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .marquee-text {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 25s linear infinite; /* ගලායන වේගය මෙතනින් වෙනස් කරන්න */
+        color: white;
+        font-size: 15px;
+    }
+
+    .marquee-text span {
+        padding-right: 50px; /* පුවත් දෙකක් අතර පරතරය */
+    }
+
+    /* ගලායන Animation එක */
+    @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* Mouse එක උඩට ගෙනිච්චම animation එක නතර වෙන්න */
+    .breaking-content:hover .marquee-text {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+</style>
+
+    <nav>
+        <a href="#">මුල් පිටුව</a>
+        <a href="file:///C:/Users/user/Desktop/web/voicecut.html">කාටූන්</a>
+        <a href="file:///C:/Users/user/Desktop/web/world.html#">විදේශීය</a>
+        <a href="file:///C:/Users/user/Desktop/web/sports.html">ක්‍රීඩා</a>
+        <a href="file:///C:/Users/user/Desktop/web/thebigstory.html">The Big Story</a>
+        <a href="file:///C:/Users/user/Desktop/web/thebigstory.html">VIDEO STORIES</a>
+    </nav>
+
+    <div class="container">
+        
+        <article class="news-card">
+            <img src="https://i.ytimg.com/vi/YXTwt-xD6wI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBkxI7zy3mUmqSR-MGCLc0e9BK_LQ" alt="News Image" class="news-image">
+            <div class="news-content">
+                <span class="news-tag">THE BIG STORY</span>
+                <h3 class="news-title">කාලෙකදි හාල් වික්ක නින්ටෙන්ඩෝ...</h3>
+                <p>ඔබ දන්නවද? ඉතා ජනප්‍රිය වීඩියෝ ක්‍රීඩා සහ උපකරණ නිර්මාණය කරන Nintendo සමාගම ආරම්භ වෙන්නෙ වීඩියෝ ක්‍රීඩා කියන දේ ලෝකෙට එන්නත් කලින්,.</p>
+                <a href="file:///C:/Users/user/Desktop/web/1.HTML" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="data:image/jpeg;base64,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" alt="News Image" class="news-image">
+            <div class="news-content">
+                <span class="news-tag">THE BIG STORY</span>
+                <h3 class="news-title">ලක්ෂ 30කට අරන් විනාඩි 30ක් විතරක් කතා කරන්න පුළුවන් Phone එකක් තිබුණා කියලා ඔබ දන්නවාද?</h3>
+                <p>කලක්ෂ 30කට අරන් විනාඩි 30ක් විතරක් කතා කරන්න පුළුවන් Phone එකක් තිබුණා කියලා ඔබ දන්නවාද? 🤔📱​අද අපි පාවිච්චි කරන Slim, ලස්සන ස්මාර්ට්ෆෝන් එක්ක බලද්දී මේක විශ්වාස කරන්නත් අමාරුයි නේද? හැබැයි මේක තමයි ලෝකයේ "පළමු ජංගම දුරකථනය" ගැන ඇත්තම කතාව!​.</p>
+                <a href="file:///C:/Users/user/Desktop/web/2.html" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwIW5vIepwfS5lUknZg0rUE4rSm-k4Lk8isQ&s" alt="News Image" class="news-image">
+            <div class="news-content">
+                <span class="news-tag">THE BIG STORY</span>
+                <h3 class="news-title">පෝරකයටත් අභිමානයෙන් ගිය "මෙසපොතේමියාවේ සිංහයා": සදාම්ගේ අවසන් හෝරාව</h3>
+                <p>​ඉතිහාසයේ ඉතාමත් ආන්දෝලනාත්මක සහ ලේ වැකි පරිච්ඡේදයක් සනිටුහන් කරමින් සදාම් හුසේන් සිය ජීවිතයෙන් සමුගෙන දැන් දශක දෙකකට ආසන්නයි. ඔහු මරා දැමූ ආකාරයත්, එම අවස්ථාවේ ඔහු පෙන්වූ නොසැලෙන පෞරුෂයත් අදටත් ලෝකය පුරා කතාබහට ලක්වන මාතෘකාවක්.</p>
+                <a href="file:///C:/Users/user/Desktop/web/3.HTML" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+        </article>
+
+    </div>
+
+
+<style>
+    /* පුවත් තීරුවල සැකසුම */
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    /* News Card එකේ අලුත් පෙනුම */
+    .news-card {
+        background: #fff;
+        border-bottom: 3px solid #003366; /* Blue border */
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-card:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+        border-bottom-color: #cc0000; /* Hover කරද්දී රතු පාට වෙනවා */
+    }
+
+    .news-image-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .news-image-wrapper img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .news-image-wrapper img {
+        transform: scale(1.1); /* Image එක zoom වෙනවා */
+    }
+
+    .news-content {
+        padding: 15px;
+        flex-grow: 1;
+    }
+
+    .news-date {
+        font-size: 12px;
+        color: #777;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .news-title {
+        font-size: 17px;
+        color: #003366;
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    .news-title:hover {
+        color: #cc0000;
+    }
+
+    /* Read More එක ලස්සනට */
+    .read-more-btn {
+        margin-top: 15px;
+        display: inline-block;
+        color: #cc0000;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    .read-more-btn:hover {
+        text-decoration: underline;
+        color: #003366;
+    }
+</style>
+
+<div class="news-grid">
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBoJq_jGki9pARk9_eWbCoC9YKphZs-vKc5Q&s" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-1.html" class="news-title">සතුට, ප්‍රබෝධය, ආදරය සහ මතකය වැඩි කරන යස කෑමක්. 🧡.</a>
+            <p>අඳුරු චොකලට් (Dark chocolates) කියල කියන්නේ 70% හෝ ඊට වැඩි කොකෝවා අන්තර්ගතයක් සහිත චොකොලට් නිෂ්පාදන වලට. මේ ගාණට කොකෝවා අන්තර්ගතයක් තියෙන චොකලට් අනුභවයෙන් මොළයට සැපයෙන රුධිර ප්‍රවාහය වැඩි දියුණු කළ හැකි බවත්, මතකය සහ සංජානන ක්‍රියාකාරිත්වය දියුණු කිරීම සඳහා ඉහළ ප්‍රතිලාභ ලබා දිය හැකි බවත් පර්යේෂණාත්මක ශාක්ෂි තිබෙනවා..</p>
+            <a href="file:///C:/Users/user/Desktop/web/4.HTML" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://www.chaos-math.org/sites/site1.drupal.mathrice.fr/files/Chaos3-2_0.png" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-2.html" class="news-title">ඇපල් ගෙඩියක් ආලෝකයේ වේගයෙන් ඇවිත් පෘථිවියේ ඝට්ටනය වුණොත් ඇත්තටම කුමක් වේවිද? 🤭🤔.</a>
+            <p>සාමාන්‍යයෙන් උල්කාවක් හෝ ග්‍රහකයක් වායුගෝලයට ඇතුළු වන විට ඇතිවන ඝර්ෂණය නිසා එය ගිනි ගැනීමකට ලක්වෙනවා. ඒ ආකාරයට තමයි රාත්‍රී කාලයේ අපට උල්කා වර්ෂාවන් දක්නට ලැබෙන්නේ..</p>
+            <a href="file:///C:/Users/user/Desktop/web/5.HTML" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/608981286_1396961231841118_6323157714087484691_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e06c5d&_nc_eui2=AeG-JxLA1y2wD1dGlPmb5ANoQuLyOI6sdDxC4vI4jqx0PL9g6njacAt40yWQLtdM7wG8J1zkXDACvtCWFkMTm29x&_nc_ohc=XppIBcu0FjQQ7kNvwGtyV0u&_nc_oc=AdklaPuP73wrrncOR6Bcuqq0kI3QVT_e04iJnIS9Hid5Ij8LiuZ8lTAQKjvt5ropkpY&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=EtDXlkoqFPkX7MB5dJu3gA&oh=00_Afs-2_igPvtzQkeN39Aa5G_7SXp-twaYtklUqtwvIMqDYA&oe=699C58C1" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-3.html" class="news-title">නාවිකයන් කණ්ඩායමක් එකම එක ගැහැණියක් වෙනුවෙන් සටන් කල ඇනටාහන් දූපතේ කතාව....</a>
+            <p>දෙවන ලෝක යුද්ධය අවසන් වීමට ආසන්නව තිබූ 1944 වකවානුවේදී, ෂොයිචි හිගා (Shoichi Higa) සහ ඔහුගේ බිරිඳ වූ කසුකෝ (Kazuko) වගා කරන්නන් ලෙස ඇනටාහන් දූපතේ ජීවත් වුණා.. </p>
+            <a href="file:///C:/Users/user/Desktop/web/6.HTML" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-6/630053260_122113735119188745_7599046249045180023_n.jpg?stp=dst-jpg_p552x414_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHp2MGCeiP1L5WH6FUAwDtjdQIzGpM5Tld1AjMakzlOV0EwPSSYJT8YbBMUde7YEt0uaaAL3A_530gTM5VLxnQN&_nc_ohc=HnhygQtinBYQ7kNvwHLi4SX&_nc_oc=Adk9ZH34dI8rAp0oRnmezYM3zYJhxQQ7iaRhJPyiNVtfT7SwN3mrwLWzNn-xFfOaZqQ&_nc_zt=23&_nc_ht=scontent-bom5-2.xx&_nc_gid=BsVI3qnOyDnmh28P1vshTA&oh=00_Afv-tmMH2GCaFBRXT-ItWJowvs0JKM3VAYl3SzL1Q2Z6JQ&oe=699C9966" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-4.html" class="news-title">එප්ස්ටයින් ෆයිල්ස් වලට අනුව සැබෑ ජෝ බයිඩන් මිය ගොස් ඇත.
+</a>
+            <p>ඔවුන් වචනාර්ථයෙන් කතා කරන්නේ 2019 දී ජෝ බයිඩන් වෙඩි තබා ඝාතනය කර වෙස් මුහුණක් පැළඳ සිටි ශරීර ද්විත්වයක් ආදේශ කිරීම ගැන ය.</p>
+            <a href="file:///C:/Users/user/Desktop/web/7.HTML" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* පුවත් තීරුවල සැකසුම */
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    /* News Card එකේ අලුත් පෙනුම */
+    .news-card {
+        background: #fff;
+        border-bottom: 3px solid #003366; /* Blue border */
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-card:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+        border-bottom-color: #cc0000; /* Hover කරද්දී රතු පාට වෙනවා */
+    }
+
+    .news-image-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .news-image-wrapper img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .news-image-wrapper img {
+        transform: scale(1.1); /* Image එක zoom වෙනවා */
+    }
+
+    .news-content {
+        padding: 15px;
+        flex-grow: 1;
+    }
+
+    .news-date {
+        font-size: 12px;
+        color: #777;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .news-title {
+        font-size: 17px;
+        color: #003366;
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    .news-title:hover {
+        color: #cc0000;
+    }
+
+    /* Read More එක ලස්සනට */
+    .read-more-btn {
+        margin-top: 15px;
+        display: inline-block;
+        color: #cc0000;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    .read-more-btn:hover {
+        text-decoration: underline;
+        color: #003366;
+    }
+</style>
+
+<div class="news-grid">
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTEhIVFhUXFxoaFhcXFxgaGhgYHhcaGBgVGhcdHSggHRolHRoYIjEiJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGismHyYtLy0vLS0rLS0vLS01LS8tLS0uLS0vLy0rLS0tLSstLzArLS4tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAAEDBAUGB//EAD0QAAECAwYDBwIFAwQCAwEAAAECEQADIQQSMUFR8AVhcRMigZGhscEG0TJCUuHxBxQjM3KCkmKyY6LCJP/EABsBAAIDAQEBAAAAAAAAAAAAAAADAQIEBQYH/8QAMxEAAgECBQIDCAEDBQAAAAAAAAECAxEEEiExQVHwgZGhBRMiYXGxwdEyQuHxIyQzNKL/2gAMAwEAAhEDEQA/AORSIlSmGSIMDe8o5TPexQgIcI3vOCI3vODCYrcYkNc3vKHSiCeETveUQW0BJh21g5EpS1XUByXYDkCT4MCYivb3lE/IrmQ5O/iBKt/tCI3v2hm3v3gKuQLHe8YV2HgkpixUdI3vODDftDJ39oZSm37xUunYdZz3zgAIMGByiSGMRyhoM03lAlviAqxn+0AqCJgTEkNhqgFCJQnfXCGb2iCXqRAe8OjKCPwDAnPrEldgSr2MDNOPQQlH59oj+0SUcuBKz8Iimqx6wUxWPQRBMmYxdIROVgVq94qzFw82ZFVa4bFGGpUGmLiJngwl4sSLOTDNjkYnGKOkdyKTIeNCz2SLdlsUaKZPtC5TOJUrNso/27UaFF5R5QoXmYrOyECJAN/JggN/MPCLn1VRsIBt+ph4YGETv3gJuM+9+0WeHyELXdmTezB/MU3g+T1DdcNWitDchU5Drl5+MQ1daOwuW256J9O/S/8AbzDMUtMx03UMGxxJxctTQOY5viH0rOlXlFUoSwSxMxjdemIAdm8cI3ZP1DZ7JLl2dSzMKQAspN4JOJq9QCT3Q9AOkYH1tOKpyVBRVLUhKkVdOaSRlljzjmYd13WeZ6PlrdI5FCdd1rt6PlrdIwX5wMI7+RF+VwqauX2qE3kOxu1KSP1JxAYgvhWOo5KO505SS3ZRSIlSI1JHA1GzLtKu6kMJYzWSoB/9uNc+kZp09N5xEZxle3GhanJO9uNPEbxgCnfv4wT7+P2hHf8AMWLsFIbeevSGO/kNBtv2hldN7ygIBGm64Qxl+fyIMDlv+IIDlz8M4CLERT7+8MBhExl8tiBUK+sFwaHf494BveDKfmIz9jAiWCR8wCj7CJCff4iEn5iyFtjK+fiIiW9YJaviK02Y0WSETlYaar2inOmQpsyIMYbGJgrVkldvQBSodKIkRLcxq2HhxOIi7aR57F4/NpHYqWWxE5Rt2WwtF6z2MACJylssvaESqXONOrfYqols3l7xEpXuYsAFSglIJKmAD4qh5VlQzzZjFyns0pJmEijaCIjFsIRcjNUusKN9FnYAf2APNU1lHmQ9IUN92P8AcvtMwwYd97/mJuFywudLQqqVLQk44FQBrjnFjjfCl2WaZaqg1Qr9SdeuRjHnipZOT6X71ZsvJR34QngXeGIi9i1wyd7/AJgXhoEr37iJKOQWGUECSAHLB2Dmj4tEYESJgIWoQTHc/wBO7HOTfmYSlBgDipQNFJ5AXg/PlHEyxFydb5igypqyMGvlgAGAZ2bkBGfE05VYOCe5WvRdWnkTSuem8ds0qZJKJ0zs0kipUBUFw5VTw9o814lYky1MmbLmpyUk4dRl4Exf4zxnt7NISqsxClBXgkBKm5g+YMYQ38jzjPgsPOlHV8vQRgaE6UbN8vT8jQ96EoHTeUIxvNo4G/WEN+MIHz+0PASMN+xgh94Y76GEDvpSIJuO49vtEb/MOo/PpEd6uxjE2KuQV74iNSvYwxXvpES1j1iUhcpCWv4iKZMbzgFTYrTZ0MUTPOpYebPiouY8JZhgmGJHLxWLjTV5PwBAiaVJJyiazWUqjouG8LwpnBKaieZxWMlUevkUrBwzBxvKNuVZmAfpGxZuDEAqmdxKZglzKd5BOCinTL2eNmzSkpD2eQ9P9e0lkgirpT0zb5hVpTZgtKozAsnCZs0OlF1LPfV3U0zc5dHgZ9hlsUylqnzgxFxP+MVq6nqMnGsa9snLVMWm0JmWlaVJUhIZMq6UhV5gwz6UjKtVpTLv2e8tkrvIEouVoVUyi2hepIMMjTS77/I2FGK/v3+xuISglS5SBcC2myQD+CakC9LBG6CKVpnXVKUT2fbS3cVKZoGDYgH55UnstknFJSk9khyQPxLYiqRk2NDUPzrZsfBpYUHCiXBvqJCrwcte8Gp/D1F8GlQb2778DB/sXYqkTSogOSpiS1SxrCjvkSqVUQdGP3hRb3aL+5XX7Hm/DVtOlH/5Ef8AuI9M45wpNplqQqhB7is0q0NMDg3oGEeYWJzMQACTeSWDk0Iq0euFejbzbLeMeZ9oycZwlHfU9X7Qm4zhKL1PI7VZ1S1lCwyklj9+Y+8FZbPMmm7LQpR5B/XAeMei23h0mbMC5ksKUkMHdiOYdlDq8W5KQkBKUgDJIusK1YDCLP2l8KtHX0B+0/h0jr6HBL+mlolmbPUlCRkO8s5BI/K70xPhGKnecbn1RxQzplxJ7ks/9l4FXTIeJzjFSN/Eb6Dm45p7v0NuH95KOae746CSInSnDfp94eWnen2g2be39oY2bIxBA3rCMI76Qw394CRAc/4ygiYHpSOot/0+qZJkTpCXUqWi+kEBzdHfGWj+esLqVYwazcip1o02s3JzUNvz5dY0uK8IVZgkTFJvqwQmpCcXJwFdHwOkZyj8/cRaE1JXjsXjOM1eL0G38GED5/aG38wr2+oixa4lFvWBWfmEpXxEalU30gKthXt+DRCT7byhKVvxiFa8YskKlIeYuK0yY29784abNistRMMSMs6glzHiOHaJ5VlUQaNdYl8gc2hiRxMX7RULxhq/REARGrwjgs2eWQgq55eeEanCOCntCgSu1W14Elk3Kd5o7Wx8FKkqT26VzEpvCTLcIKQReReGJxpjFnojg1Jyk3KTu++9DM4V9NyJbdsszF0/xSavq6svSOqsvCwm+laUSETUpQiWVusrfuTB44iJLUkS5Kr6JVnKbq5CQoFZUP1Njo+TmKs4f3QKpMgIKyHnrUaEV7gDtUYiKW1/Hev2E21tbXp3r9kSiUpYvzE3AuUqVab/AHe/LoiYCceUYE61G0dmAhU5UsFKw5CC1ErvPjTxjcm8NCjenzFTV4gKogEZBA6EPhAmWhJKkSwCWqMCkUA8OTYcqNVJseqLffa/yzIRw+cZaUTZ5upoEINCP/JVCRvoKbBLQQUoHddm/MCwY/qprXHkI0Zy61y0zGg1y0OFNIUivSvMgj8L/fl/yaoJD404oGWmuPMV8x13m5vyLM+A5j5GNDQcqeSs0ph0LipHdNDTxHl56EtDHmlXocBTxry5RcvYimWUkuCQP9vLpCjUs1oCU3SASCQ76EjMw8BJztms8uUyZaEp1CQ3iTr1iQKcUyycN56Rwdl+sZyR30pUNR3Thi4p6R2csAgEZ63XY4j7GPFVsPOm7z55OrXpTpv4+SwodegfqacjGd9TT5iJCzLDk0WqjpQRVQq+ACXyfJo1RKGXifDHSJkynoQ7uGLEF/y9GyrCYTUZJtXsLpyUZKTV7HkaU794mQP5/j4jW+pOB/2y7yXMpR7p/Scbh5tg9W6GMgr/AH3vpHo4VI1IqUdj1FKcZxUo8kgUN7pAlXPf3gN/esOK79YsMuP93h/D+IV3e+cMRz2f3gA1eD8QlSj/AJbOmZzJLjXul0mPQLNxKWZKZzhEsgF1MAK3WJdgcsY8q38GL1p4ipcmVJwSgF//ACUVGp6A08YxYnCKq0111+hhxWDVZprx14NT6xsShM7YKvy10SoEEAp/I45VHjHP4b0P2hgaM9CzjXKGB/j0jTSg4QUW9jVSg4QUW72CUo75H7GAJx3zECo7pnSI1K+PZobYs5BKVj4/eIlr8N7/AGgFzN+kV5k2LJCZTsSLm76xWXMgFKgpMlSiwGRPVtIZGJjq11FZpOyI0pJLAEnICLQsQT/qKA5Cp8oms6GSCV3Ar9NVq5PlFuz2X86FJQlQqpdVJIcEDmYcoHn8Vj3U+GGi9SGz2cKBupShOClTKno2RjouB8JE1STL74HcmPR0EfirkPWFwyyFSwZcu8mZdS8xJCCvJXkI9A4V9JJcrnrKiWvJT3U8nappFtXsczV6RMix2WXZ+zKVCauU4VdBIMuvdUcHHpnGzw/gcy6gumSlN5SLjGYyhUFYphnWOklWZEtN1KEhOBASGI5iIJ8+jDFqMMCNvAqN3eQLD3d5Pw714RQl2CTKN5KXVQlSyFKriXPxzirMUlIupSGJNBR1E3r3U75y2icD0+D876Z8yYQ/eP8ABxej58+WLuUUtkPUIx2RHOXQkPqNHw+2HLkRWnLNC9PcFqVDP0rjDqOetcm0IJ168sfzEOYbnyOuznrWSwDE441oXqMWq+umfnYlWeuVKYUunDV88dT4zSJepzr0zO38c7MqQ9KuxSa0cFxusBICLO/db9SK419Rn5PnWZEtxU1KSK6jY84NMuh5gEDmk1aCKQC9GCnGGCmB6jCACCfIdThmYZPkM4UWET0pF0guHH4mzhQAeDNlHq/Dg8tDuO4k40qBXQeeceWGvzHbcV412dkkykH/ACTJKHL1QkpD9CcBhnjHncdTlUyRj1PTYyjKo4RXUzPqfjJmzQmWohEskAg4qwUoEZZDXHOCsP1RaZQbtAsNULD/AP2orzLcowUht7+IJJh6w9PIoNXSNscPTUFBpNHYL+rJM5HZ2iSQkipQbzaKALEMdPWOSnJCVEJUFAGhAIcdCKHdYiJ28EPTbRNKhClfJt0CnRhTvk0XQIHftEg38eRiIF+kE+/Q+rQ00JhpI6b+4ES2SzmbMRLDutQHRzXyxiGVNKVBScegPoecd19MW2XPBV2CETE0vpQkAkpJ7pxGBcc4z4iq6UcyVzNia7pQzJXOS4xZOxnTJYwB7uP4SAU+WEUSd+D/ABHe/VFokSgJi7OJilOEkpH+4AqIcAOeekcFPnXlE3QmuCUsAxwA8YjC1XUgm149SMLXdWCbXj1ErPx+8Cpe/UQJVvxaIjM67oY1WNDkEtW/GIZsxt89/aBmThrvTfrFVa4skInUCmTYiKoOVKKiMg4DnAPrF+zSUpNHmKIIISKMQxcmGxhc5eKxsKWj1fQgl2YJrMBJZ7oGWqjkIvBCEM68FXpYTVV01utB2SyzFC4tRSE0YCp072YypGzw/hqU/gS3m51BMaIx6HBq1qld3kY9ksMxa7gBQHvpJBJFWpl4R2X0/wDSqHCim8rF1fAwFaxe4Nwu8cI7jh1hCRh4b8YuoIWoLkHh9gCABTlveNI0MvvzyitxLiUqzgKnLCEkteNEvk5wBxxxjlOK/XksLKLNKmWlQTeKpZN0GgFWJIqHIGYxyHJLc1UsNVq/wi/rx57HUTpr9NeRz8DGbNnefyMvLeuP9NTLQpEybaQUqmzLyUNVCLiQkMcA6RQka4mIrba5y739vMkkp/EiYlTgj9VXSCNU682FLS5EqNpuN1pzwXZ6hr6vRnHLTMGo5NVWD9ywxGBdsxq3UN3een/VkySsItllKNFIN4FL4h3ceJNcMX6Dh1rlz0Bcld4NkoukjUYgtl08ZUkwqYepTV5LTruvNAgF6VOPwoE1bnljzi0iV0ABbwOBDV1zzwyiWVLq7UocNWveTZMzeU4lZHEunocU/OXJtJEjyJFGfGniOj8t4zBIxI/SvDw86wwP5v8Al11w67zQagcAOpLjMGo9/iAkkCWo7ByOjgUiFbtnVNRTEH3w9YJaiz4m6D4pVv1gE4sGIC/RX7t5wAVrVMIWanXPOunOHixIYpBKUk5ls8NIUAHh6Q8TKUTjWgHgAAB0ZojliDUfSOWe4S0E7b5+npAisJRzhkkwENhim/OCAiOEFb3ygJuGd+xhDft9oDfhnDb34gftARckffr7xp2fja5cnspXdclS1j8RLuG0ADB8cWIjHKt+sCVb9D7/ALRWUIy0ZSajLRmxaOMqXI7GaLzEFC86EgpOvdUa40Dg4xlFW/SIjM34ftEK5kTCmo7FFlhsTLm730ivMmxEuZDypSlFkgkw5REzq8sEmJ7PZFLwT8DzjUsnDkpYnvK54DoI0E73yh8aXU42Jx7fw0/P9GdZOHhQdb1/IO6BlUZxpypYFEhuQ9YOTLJy3gfvF6zWbdYeopHLtyDZrO+/KOg4Tw69l1+8R8PsT5U5+3vHY8KsITkN131yixJZ4bYQgb3vCNEquiuAq+mbwiWGXtzjhfr3iZXMkWCWr/WUntiDXsiprtNWU/JPMxWUrK46hRdWeXzfRcnS2u1SpqAFALRNBZKgCFJZ3IOWBBbMR53/AFCsKZEqX/bykS5ZX/kuhjfA7jn9LFWbO3WOhtlvfiUqVVk2aYph+pUxKSGcZS94xY4zYE2iTMlKoFBgWwWPwq6ux1p1eklmTNFGo8PUg3/F6281/c5P+n/GSsTJExZUR3pZUSVXTRSQS5YFi1fxHSu7xrhPbgKSoonprKmJcKBGIBGKTRw/wY8x4fPXZrQFVeWshY5fhUPJ2wy5R7DKZaQoFwoAgs788CGbX7iK0nmjZj/aNN0ayqw2f358zleD8UTaiqxW2WjtQbpfBfNJ/KrOhFKj/wAee4pYJ3DZ6Vyibp/CojFj3paxqPV3GYja/qHw0pMu1S+6pJCFFOWcpeJqCCP+ugfdkJTxOw1CQpQz/JODpcDIOxbSIavpyhtOcacY1Uv9OWkl0ZpcEt8u0ykzEEgFwoGpSS/dPQjxDdTeW7UOT11BYgU9P4jzr+mltUifNkKcXklTZhaCL3o//UR6Ktnxo5/6qGDNrlh7FtOWaNzn4yh7mq4rbj6CCWw1u+Cg4w8d1gSceYBGVUnr1ygppN0k6aNga10YekCk1DAkXmelQoP6U++MWMwRIen6iPBSfv1iETaO7OkHKhSRC7Qs50SccClTZ5tvKHulyKE3pia80v0/mACKbaClRAIZzrmX0hRHOkqUb2oSaku90PCgA8dBhiYjWYcKakcux7bMO+38oIb36QF7fv8ABgVGJK3DeFe3666GAvdd/uIYq3y/g/tEkZiW9v016QJVT1y668ojK9+mv7QBXnve3gsVc7Eil78f3gFL34YekRLmc4gUqLKIqVQlXO3vfKIr0KVLKiwDmNix8OSmqqq9B9+sNjBvYx18TGmvi8ipY+HldVOE+p6feNmTLCQyQw3/ADBB9+hiSXLJ35RojBROLWxE6u+3QQ38/eLUizv/AB4GJJFm5b/g+kaNmkgaZePviPaLiCOz2fxbH5jVslkfLYzh7NZ8t8j8baNvh9k8CKZ45j29YkktcMsbNvk/n8xvyk3RhvSK0hLDfnv1h7ROZq+3n5v+8AD2i0dfCmdD4ENHllotJXxsE1aYEjkOxb/2r9jHoE2fng/pr5H+CI8p+qJhs/EjNOF9E3/iwCxV80qGxCauy+p0fZivKceXFo2/qW19hxSzTlFklASrRr0xCz0F4HT2jsjj+HLll4acyMPDkf6iWLtJCZoqZRc1fuKZKji+IQcBnnWLn0Rxrt5PZqP+WUAC/wCZIolfOlDm9c2iYu0miKsPeYaFWP8AT8L/AAc7/UXhQRNTPSO7M7qmyWBTxKdP0nOOg/p1xLtZHZKLqklhXGWrDLKop+kdY2eOcI/uZEyVRynuk5LTVBfTJ+tWw80+lLf/AG9qQV0SSZc18gotXFrqwC/IxR/BO/U1Uv8AdYNw/qjt+PS6PRfrCz3rFPBH4UXuhQoTPDDQYnnHP/0unEifLegKFDR1hQOP+xO8Oi+sbSEWOeTR0XWOZJEtvX0jmP6XylPaFirBCR1SVKPo0TL/AJEJo/8AQqX6r8BcHl3eMziMAFTCw/UEFdNCpR847tSKNyIpqDT05faMLg9g/wD6bVaVYTF9mhyzISm6pWdCsEdUxtdpV/8AarQD8p0pvQReCsjLi6mecflFLxtr6jkuXBxIfooV6d4P94iL4g1bBy7pOGNKPUfvDrAYipYHJ6pL4sTgdtR0mubFWpFFDnk/3hhlEpOIDGq06YpvClOvj5siYKKfNB90npR4aWprp/2F83BKTRnwO6wJDAtklQLOKJWCOmvphABYskpN0O2f5gMzCirNtKUqIJOJOWZcH1hRAHiZXDdpz6beAC97ECV7Gsc6x7BzJFL6wJO/T7RHehn36byibFHIkvb9WhlK3sfvESl79dYBS4mxSUyVa+e95xCqZukRKXAiLJCZVCS/E9lspXyGsS2SwPVfl941ZaWFPCHRp9TnV8alpDfqKzSUoDAdTmYspgJaY0LLZTvesOWhzHJyd2RSZD4xpyLNvTZbzg7PIbJ9n9x4RfkS2xHjyb7Mf+MSQRypGlNOT1bzcRes8rDSmmeBr4g+usKVL6+HqwGhY0MX7PLANeeeebVxesAFixWd8umGrkYa5fzG5Y5bVb2xH8fxFazSaavnv2rnFqaspHOlfDOnT+IAJJ09qeFDg9QemT/MZ02bexI0Pi+OL1H8GI56zR6ONWxzfkWxwzcYVypxXU+GRBfCrYtoSQxgJJCSc8dT6vQmvXlVxHJfXnBjNlpnoAKpY7wGJQcWpW6QS2ilMMRHUIc0BBfHDPFwcO8BiBzLsYPE1z5UL0OIFb2pxzBFYlHMrDaNV0pqceDmfobiyZ8j+3X3lIDEFyFSj3cK5EJNDlQg05jjPCpvDp6ZkokJd5SxlrLVhVsjiI3+L/S8yXM/ubEoJWDeMt6Voq6ahifymlaEGkbXDeMS7Sn+3tMrsphDKlTQwX+VRQS14UejkZQm19HudONaNObq0tYS/lHld+XBD9O/WUmcyZhEqboT3VlOBSpqE/pLGtHz5T+oPDRLtHaJAuTgTSoCs8NXSfExqcW+gAXVZpgFHuTHIpiAsOWbUHrkOX41w+02ZKZU8shyUp7QKSClw6UOSmhxZqxWblltJGjCRoe9z0J2vvF9/s0uP/U3bWORKJ79TOwqU91JOFVNePQR2n0tYBZLIntLqFE9pNKizPRlHJk3RiKiPNeAcOm2iclEkgKDrvEUSEsXw1bxj0Sw/ToSRNtE1domVKSt7qSQ4uIqAp86+GETTu3cX7Q93TgqSdle9uX+Eu7HQS1C6LpADUcMTdLggGrEPRhjDNiA2JGv4vwmgxx+2QjCzRyKsdTUXFB8no2PTQgtheN1wAXYu4Vd8m5nXpoOGPixJdyMSPzJKVF+o0/YCpg/JJOrhTGjYt9+cV+J8TlWdJM2aEAAgXlCpSp2SHcnHARgSOO2ud2xkSUCVeVctE15SBLKQoOk95RxU4LYYRVySHU6E5q626vQ6WaoAFyAAFuSRQBYUAXOT+uWJ5jiP1chE/spKBaAoKHcIftFAMm9+FnvYE4HCMCeiZa1WhKrQbSqWlMyXcB7BRu3pkopDByAAC+ROUSKlompVKksmXaUJn2UD8lolpKVyw1QTXpC3Ub2NsMJTh/N39F+9teNmX7ZxW3Xy5sMqg7i5hKk0DBRBAfwhQfAuD2GdZ5czsEOpPevGt4UU5KgT3gYeLJNi26adsv/AJX7PNr4hiYjJhr8ZrHWzEhVvYgDMgFLiFS4lIpKZKpcRlcA8XbLYs1eX3i6jczVK6grsjkWdS8KDUxp2azBOFTqYNMSpEOjBI5tXESqacBpEWZMp4GRKJjVs1naLmcayWfIxpyJVMKZ/wAnkxgpMkjl6N582x1ieUBpXn1LCo5FPj0gAJMvz/fTryzi1JTRwKaDm9Mn/MPLOIZfMv68s3xTzGDRckJckY64PU+14Zj8zE5wATSJfvjr6VcdMNY0rGmo2+Pj5VphFaRKO/XLKuvPIxoySww8PjDCmP2gAsFbDDTB21yB+fWKM5bnEtgCaEcnIyLc21FIGZNfMgN6dLr08WycRXMzI4nFmNNaEPWrBxmGqIAJEzHwzYUJx0oddPAM4hiKijPhyJBwI58+gIcRFj/yGWYPR3Dh6ODjQwTF8AHwbN6j8JD1GT8gC4gJJHfEH5S/mMsKUOYhXuocvVhiMDg2WmWIrEV71wNXrVgWbEHDUkB3ESypg/KoDIAVxqAGNKg4NyGIgAmSX/FUZu+aamoLdSRjicYIVoQMHrSpYGhI/MM2+YhfQPkH51SzDF3wPQGqYlBfngzHBw4wPXDXAhxABXt6J6v9IolvUrUkrIehISyQ76qx545tg+npMuZ200qnzqErmkKYgsyUig5UcZEZ7IKcgX/64jF90yIwC89cQ/gHDVJJ0FA2WIwjKhkas4xyxdvp+9yGVY5SFmamUlKyO8pLJJZWYo76nFscosKGLKLj/wDJcHA5FscHqQKVrdbkSU35i0oGLrZJLhiBmS4HOgoaGOZm/UE+ZJEy4iyIZzMm94u109khrxOBct0OMQ5JFoUalXXja7718DouK8TlWdJVNWAe8ySXK3ZSWTiSDTDSuccqfqS0TEK7WbKsqUKIWpSSZqrwvC5JU7UbG8agucYp2awBpK56Zg/upapK1zT3kTwo3FpKmupIFBTAdYtIX2cyz2u0JuKWhUicpaR/jnSyyZveSwdIAeFuTZuhQp001u/1fZa9H140Kpm9mkz5VlWrvJCrVa3UoXu7fEt6ByS9MsWeFbAian+4VaJlr7CZLVOSpN2UUFwsS0MxIpV+cZUv6hVLIUparQpSVonImH/CRf7txIajBz3R+IxS4lx+0ThdVMuy6gS5fcQzuzDEci/hC3JG1Uama/r8umuvlZHSca4sZJSqVa0AIUgy7PJSySkKqJhBxuk0OopVxjWr6qmJT2dmQmQgP+HvK/HeJc0FSMBl4xz6vv8AeBJx8fZ4jOy8cNTirNXffepIF4vi5eub1h4gUo6worY0Z7EJVAKXESlwBVF7HOcyQrh5SCosIKz2YqqaD3jRloADAUhkYGSriVHRbis1nCa4nWLKRAJiVCYalY58pOTuyREXJMqI5MuNWySNQYkgOyWaNWVKbln8YkYPnm8DKlZfGfzXQ1Bi1JGlR+2gLfh5h7uoiAEnzwbF+nOjjPBjBp0B0dssnyzANWzBiLNmcnLEk6sQ5ryLg4giDSoHJx544AE6po14PdwcRIE6GcPR8s8cKhyMRnoY0bMgFsCz61ahbFyzHI5GKUlHlnXF6XtC5u/iFcCXrGjYwUh/Bno2mtOdecAFlLDJ2xLDzIbTOJJ8ylXZqhsudMRi+WNQ8Ve1cvQgZ150fB/5ZnhO2bsKYdQKGmeFc0nEQAPNUAKnR/w64ZDCoyOKSDSIwp6Fj4nOhOLEEsXIYtiDiS1aEkZ1FcxgaEgnS82ZEVjMqzAjNxr3bzkN3qVN1yNawATLriQ5ehOtMwHdWueJCoeWArWoP6i751dw4bOuLFiYErBoKNiARR+6Ti+IFSA+BLsYNzm+ZOfiXFK0cviATgYCSwlRGZrgcHPLAmoOulCzu6jiHd2evOoqOXuEmph7QZE4ZsXzFQcOZBbAlmMKYWq3mXwrgQaNqT1aoAJ0LOperUA55sTofB2LPImZQgc2blUVrrzxqAaxica46izICqXipICEquqIvCoS6nZKjr1IMZHHPqC0iVfShMhGCTMKe2mANVEsgsQkihJoIq5pD6eHnUtbnqdJxriqLPKUtSkuEm4lSkpKyO8EigNTyPQGMRf1BOmyhMlpRZ5RH+vPUCCXJuy0D8RBBZzWtHcRizLH2S5qwVTZ0ns7TLWs9+bIFFINWDAk0ByyhTESpCrQtCEKV2aZ9lMzvJuKULyUpU1XJZnxGVYW5M208PTS6vr5cePN+dNB1WhIWlQLlYURa7WCEAJZR7GVRhWgYO9BFkBEub2q59/tpJMm0z0VQtJdVxBAughQugeGhyp/1MUukkWllBUubOR+A3bqgmVUDNss2OMYdrt0yaq9NmKUdVHTICgAZqCFuSRthh5S30Xfy0+mi+Wpsq+pVSlTBJmKmhV0hc8VTMqSuWgEMMgGo2GUYttt02cq/NWpajmrAOMAMAKYBorPvpAk78f3ijbZphShB3S16jqOm3EAT6/bf7Qn30MM++hgLNiBw8PZoYHDw+RDE78YT78YkpcRQ+/2hQ6Q4w35QoAsjLeL1nsrVVU6ZCFCjRBI4OIm1oi2IkSIUKGGMlQItyEQoUAGpY5FRGvZ0gM2NG82GWoIrChRAFkFOJNNSG5VauYyNQ4gq4HEV9a+F53D/mcCFCgAQAbkXAd+hwoTVL90OwLvFiVeqxdqlwzZnBXXAlwXZ6QoUAF6zIpU0y8g4wr3SNH6xcn90AVZ2cYv3qM7HA+XOFCgAgsqi71y9fwsb2J1yeCmDCpoHGI7r40VRlUpUO4eohQokAVTasK0JGDs14lrrYEuHAOjwxUogCpyGBfVu8MmP5XzrWFCgAGXPvMAXcs1fxKDBiRqBUtoXxhCYlhQ1a6RTvHBjiDecYcnIqFCgJMvjv1CizFDgqCiX7ynDOUsCCHemLh6EiM/iNvniX2kxabJJyKQFzVMWFUhk4hjUjItgoUJlJ3Z0KVOKjTdtW7d8ehn8PtCWUuTds6QoJXaJoVNnqJAwDECihqzUOUWLFYyntqo/uJU4pmT5oMw3GN1UsZKAILNkS4wKhRC2TG1G1KUV8vuvPfZ6GYr6nKAKdrNSVhM9ZLlCjhc1wxwamYjFttumTlX5q1LPNmHIAUHhDwoS5No6kKMIO8V330KxO/CBvb8IUKIGNjKV6/b9oE78R+38QoUSV3BJ57IffxCJ34b/aFCiRdxlH59oEr35GFCiUVk2g0q57eFChRFi6Z//9k=" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-1.html" class="news-title">ඉරානය තුළ Mossad ට එරෙහිව චීනය නිශ්ශබ්ද ක්‍රියාදාමයක....
+</a>
+            <p>2025 වසරේදී ඊශ්‍රායලය විසින් ඉරානයට එල්ල කළ ප්‍රහාර හරහා ටෙහෙරානයේ බරපතළ ආරක්ෂක දුර්වලතා පැහැදිලි විය. එම සිදුවීම්වලින් පසුව, ඉරානය තුළ විදේශීය බුද්ධි ක්‍රියාකාරකම් සම්බන්ධයෙන් නව අවධියක් ආරම්භ වූ බව දැකිය හැක. මෙම පසුබිම තුළ, චීනය ඉරානය තුළ ක්‍රියාත්මක වූ Mossad බුද්ධි ජාලය සීමා කිරීමට සහ බිඳ දැමීමට තාක්ෂණය මූලික කරගත් දිගුකාලීන උපාය මාර්ගයක් ක්‍රියාත්මක කරමින් ඇත
+.</p>
+            <a href="file:///C:/Users/user/Desktop/web/8.html" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKDyXwzdH4YxkJh-5g2d5ub3scbqWQHm42cg&s" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-2.html" class="news-title">ගණපති සහ බුදුන්ගේ අඟහරු ප්‍රතිමා❇️.</a>
+            <p>014 දී, නාසා මඟින් අඟහරු ග්‍රහයා මත පාෂාණ සැකැස්මක් කැමරාවට හසු කර ගත් අතර එය ගණපති දෙවියන්ට (ගනේෂ) සමාන යැයි සමහරු කියා සිටියහ. මෙම පර්වතයේ කඳට සමාන වක්‍රයක් සහ වටකුරු මුදුනක් තිබූ අතර එය විශේෂයෙන් ඉන්දියාවේ අවධානයට හේතු විය. "අඟහරු ග්‍රහයා මත ගණපති ප්‍රතිමාවක් හමු විය" වැනි මාතෘකා සමඟ මෙම ඡායාරූපය සමාජ මාධ්‍යවල පුළුල් ලෙස බෙදා ගන්නා ලදී.</p>
+            <a href="file:///C:/Users/user/Desktop/web/9.html" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcp3EFvuEfaQQx1JoBa-WAt8bCcvP5EkqH6w&s" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-3.html" class="news-title">ඉන්දියානු භූ තැටිය දෙකඩ වෙයිද? හිමාලයට යටින් සිදුවන අමුතුම පෙරළිය මෙන්න!.</a>
+            <p>මාලය කඳුවැටිය නිර්මාණය වුණේ ඉන්දියානු භූ තැටිය සහ යුරේසියානු භූ තැටිය එකිනෙක ගැටීමෙන් බව අපි පාසලේදී ඉගෙන ගෙන තිබෙනවා. නමුත් අලුත්ම විද්‍යාත්මක පර්යේෂණවලින් හෙළි වී ඇත්තේ මීට පෙර කිසිවෙකුත් නොසිතූ දෙයක් හිමාලයට යටින් සිදුවන බවයි!</p>
+            <a href="file:///C:/Users/user/Desktop/web/10.html" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF0R_G8icw-WXnlLQPOqcHcmgg2p7Fp7Aeyg&s" alt="News">
+        </div>
+        <div class="news-content">
+            <span class="news-date">2026 පෙබරවාරි 19</span>
+            <a href="news-4.html" class="news-title">ෆැන්ටා (Fanta) නිර්මාණය වුණේ දෙවන ලෝක යුද්ධය මැදදී බව ඔබ දන්නවාද?</a>
+            <p>අද අපි ආසාවෙන් බොන දොඩම් රසැති "ෆැන්ටා" (Fanta) බීම නිර්මාණය වුණේ දෙවන ලෝක යුද්ධය මැදදී නාසි ජර්මනියේදීය. යුද්ධයට කලින් ජර්මනිය කියන්නේ කොකා කෝලා සමාගමේ විශාලතම වෙළඳපොළක් වූ නමුත් යුද්ධයත් සමඟ සියල්ල වෙනස් විය..</p>
+            <a href="file:///C:/Users/user/Desktop/web/11.html" class="read-more-btn">වැඩිදුර කියවන්න ➔</a>
+        </div>
+    </div>
+</div>

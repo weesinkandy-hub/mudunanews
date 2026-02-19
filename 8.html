@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title | Muduna News</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-red: #cc0000;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --bg-soft: #f9f9fb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.8; /* ඇස්වලට පහසු පරතරය */
+            color: var(--text-dark);
+            background-color: var(--bg-soft);
+        }
+
+        /* Header පටු තීරුවක් ලෙස */
+        .mini-header {
+            background: #fff;
+            padding: 10px 5%;
+            border-bottom: 2px solid var(--primary-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-header a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* ප්‍රධාන Container එක */
+        .article-wrapper {
+            max-width: 850px; /* කියවීමට පහසුම පළල */
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        /* ලිපියේ ඉහළ විස්තර */
+        .article-category {
+            color: var(--accent-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .article-headline {
+            font-size: 36px;
+            line-height: 1.3;
+            margin: 15px 0;
+            color: var(--primary-blue);
+        }
+
+        .author-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .author-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ප්‍රධාන පින්තූරය */
+        .featured-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* ලිපිය පටන් ගන්නා තැන (Drop Cap) */
+        .article-body p:first-of-type::first-letter {
+            font-size: 50px;
+            font-weight: bold;
+            float: left;
+            margin-right: 10px;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        .article-body p {
+            font-size: 19px; /* Eye-friendly size */
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* ඇස්වලට ආරක්ෂාව දෙන Highlight Box එකක් */
+        .info-callout {
+            background: #eef4ff;
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Social Share Buttons */
+        .share-buttons {
+            margin-top: 50px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-share {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .fb { background: #3b5998; }
+        .wa { background: #25d366; }
+
+        @media (max-width: 600px) {
+            .article-wrapper {
+                padding: 20px;
+                margin: 10px;
+            }
+            .article-headline { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mini-header">
+        <a href="index.html">⬅ MUDUNA NEWS</a>
+        <div><small>2026 පෙබරවාරි 19</small></div>
+    </div>
+
+    <article class="article-wrapper">
+        <span class="article-category">විශේෂාංග ලිපි</span>
+        <h1 class="article-headline">ඉරානය තුළ Mossad ට එරෙහිව චීනය නිශ්ශබ්ද ක්‍රියාදාමයක....</h1>
+        
+        <div class="author-meta">
+            <div class="https://zeno.fm/_ipx/_/https://images.zeno.fm/CMpQy9vic59D4SwEYFkhjqmybAtQVmGgUXRk04q_R14/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvZjhjNTY3NGQtMDNjYi00ZDE3LWI4NDctMTU2NjYxYmJhYjdjL2ltYWdlLz91PTE3NzEzMTM3MTAwMDA.webp"></div>
+            <div class="meta-info">
+                <strong>මුදුන පුවත් විශේෂ වාර්තාකරු විසින්</strong><br>
+                විනාඩි 5ක කියවීමක්
+            </div>
+        </div>
+
+        <img src="https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/623686735_1419411782929396_3612184253808709277_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e06c5d&_nc_eui2=AeHc60zc5-Q40-kaU2A5-UvTgxWUl6SOiDyDFZSXpI6IPHNwYHuaj408Tu7aQHOGB9HYEb75pGqXMe2oQuTHdIF_&_nc_ohc=OsX1hqjDs10Q7kNvwFGtVya&_nc_oc=Adm3fiQp2LZtRtMyDDW5NUYGDe5-RChvHkxM-NVJ3n7xixCm2fy4Lzi1FWd0iEfzTMc&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=8rdoDOwXa0aKsOy_fwolkQ&oh=00_AftPPsBz7p9vp_MmGIvbu3W0hFoyWES6olTC2H5gVM0bAA&oe=699CA3D9" alt="Eye Care" class="featured-image">
+
+        <div class="article-body">
+            <p>2025 වසරේදී ඊශ්‍රායලය විසින් ඉරානයට එල්ල කළ ප්‍රහාර හරහා ටෙහෙරානයේ බරපතළ ආරක්ෂක දුර්වලතා පැහැදිලි විය. එම සිදුවීම්වලින් පසුව, ඉරානය තුළ විදේශීය බුද්ධි ක්‍රියාකාරකම් සම්බන්ධයෙන් නව අවධියක් ආරම්භ වූ බව දැකිය හැක.
+මෙම පසුබිම තුළ, චීනය ඉරානය තුළ ක්‍රියාත්මක වූ Mossad බුද්ධි ජාලය සීමා කිරීමට සහ බිඳ දැමීමට තාක්ෂණය මූලික කරගත් දිගුකාලීන උපාය මාර්ගයක් ක්‍රියාත්මක කරමින් ඇත. මෙය සෘජු යුධ ක්‍රියාමාර්ගයක් නොව, ආරක්ෂාව, තාක්ෂණය සහ බුද්ධි ක්ෂේත්‍ර එකට බැඳුණු නිශ්ශබ්ද ක්‍රියාදාමයකි.
+බටහිර මෘදුකාංග සහ GPS පද්ධති ඉවත් කර, BeiDou වැනි වසා දමා ඇති චීන පද්ධති යොදවීම හරහා, පෙර භාවිතා වූ ඩිජිටල් මාර්ග අවහිර කර ඇත. 
+චීනය ඉරානයේ බටහිර මෘදුකාංග සහ GPS ආරක්ෂිත, සංවෘත චීන පද්ධති සමඟ ප්‍රතිස්ථාපනය කිරීම තුළින් මොසාඩ් කලින් භාවිතා කළ ඩිජිටල් "software arms" අවහිර කර ඉරානයේ ලුහුබැඳීමේ හැකියාවන් වැඩි දියුණු කිරීම සඳහා නිරීක්ෂණ චන්ද්‍රිකා සැපයීමට කටයුතු කරන ඇත</p>
+
+            <div class="info-callout">
+                යුධමය අංශයෙන් බැලූ විට, චීනය ඉරානයේ  බලය නැවත ගොඩනැගීමට දායක වෙමින් ඇත.  solid-fuel Missile, නිශ්චිත මාර්ගෝපදේශ පද්ධති සහ stealth ගුවන් යානා හඳුනාගත හැකි උසස් රේඩාර් පද්ධති මෙහි ප්‍රධාන අංග වේ.
+            </div>
+
+            <p>එමෙන්ම, Shanghai Cooperation Organization හරහා බාහිර විනාශකාරී ක්‍රියා වලට එරෙහි බුද්ධි හුවමාරු ආවරණයක් ගොඩනඟමින්, එකවරම කලාපීය බල සමානතාව පවත්වා ගැනීම සඳහා රාජ්‍යතාන්ත්‍රික උපායන් ද ක්‍රියාත්මක කර ඇත.</p>
+            
+            <p>මෙය සරල අවි සැපයීමක් නොව, Belt and Road Initiative යටතේ වැදගත් වන වෙළඳ මාර්ග සහ කලාපීය ස්ථාවරත්වය ආරක්ෂා කිරීම සඳහා චීනය විසින් ඉරානය වටා ගොඩනඟන සම්පූර්ණ ආරක්ෂක පද්ධතික ව්‍යුහයකි.
+
+.</p>
+        </div>
+
+        <div class="share-buttons">
+            <span>Share via: </span>
+            <button class="btn-share fb">Facebook</button>
+            <button class="btn-share wa">WhatsApp</button>
+        </div>
+    </article>
+
+</body>
+</html>

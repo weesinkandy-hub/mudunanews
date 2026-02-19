@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title | Muduna News</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-red: #cc0000;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --bg-soft: #f9f9fb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.8; /* ඇස්වලට පහසු පරතරය */
+            color: var(--text-dark);
+            background-color: var(--bg-soft);
+        }
+
+        /* Header පටු තීරුවක් ලෙස */
+        .mini-header {
+            background: #fff;
+            padding: 10px 5%;
+            border-bottom: 2px solid var(--primary-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-header a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* ප්‍රධාන Container එක */
+        .article-wrapper {
+            max-width: 850px; /* කියවීමට පහසුම පළල */
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        /* ලිපියේ ඉහළ විස්තර */
+        .article-category {
+            color: var(--accent-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .article-headline {
+            font-size: 36px;
+            line-height: 1.3;
+            margin: 15px 0;
+            color: var(--primary-blue);
+        }
+
+        .author-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .author-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ප්‍රධාන පින්තූරය */
+        .featured-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* ලිපිය පටන් ගන්නා තැන (Drop Cap) */
+        .article-body p:first-of-type::first-letter {
+            font-size: 50px;
+            font-weight: bold;
+            float: left;
+            margin-right: 10px;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        .article-body p {
+            font-size: 19px; /* Eye-friendly size */
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* ඇස්වලට ආරක්ෂාව දෙන Highlight Box එකක් */
+        .info-callout {
+            background: #eef4ff;
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Social Share Buttons */
+        .share-buttons {
+            margin-top: 50px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-share {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .fb { background: #3b5998; }
+        .wa { background: #25d366; }
+
+        @media (max-width: 600px) {
+            .article-wrapper {
+                padding: 20px;
+                margin: 10px;
+            }
+            .article-headline { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mini-header">
+        <a href="index.html">⬅ MUDUNA NEWS</a>
+        <div><small>2026 පෙබරවාරි 19</small></div>
+    </div>
+
+    <article class="article-wrapper">
+        <span class="article-category">විශේෂාංග ලිපි</span>
+        <h1 class="article-headline">ගණපති සහ බුදුන්ගේ අඟහරු ප්‍රතිමා❇️</h1>
+        
+        <div class="author-meta">
+            <div class="author-img"></div>
+            <div class="meta-info">
+                <strong>මුදුන පුවත් විශේෂ වාර්තාකරු විසින්</strong><br>
+                විනාඩි 5ක කියවීමක්
+            </div>
+        </div>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKDyXwzdH4YxkJh-5g2d5ub3scbqWQHm42cg&s" alt="Eye Care" class="featured-image">
+
+        <div class="article-body">
+            <p>2014 දී, නාසා මඟින් අඟහරු ග්‍රහයා මත පාෂාණ සැකැස්මක් කැමරාවට හසු කර ගත් අතර එය ගණපති දෙවියන්ට (ගනේෂ) සමාන යැයි සමහරු කියා සිටියහ. මෙම පර්වතයේ කඳට සමාන වක්‍රයක් සහ වටකුරු මුදුනක් තිබූ අතර එය විශේෂයෙන් ඉන්දියාවේ අවධානයට හේතු විය. "අඟහරු ග්‍රහයා මත ගණපති ප්‍රතිමාවක් හමු විය" වැනි මාතෘකා සමඟ මෙම ඡායාරූපය සමාජ මාධ්‍යවල පුළුල් ලෙස බෙදා ගන්නා ලදී. විද්‍යාඥයින් පැහැදිලි කළේ මෙම නිර්මාණය සම්පූර්ණයෙන්ම ස්වාභාවික බවත්, සුළං ඛාදනය, දූවිලි කුණාටු සහ වසර මිලියන ගණනක කාලගුණික බලපෑම් මගින් මෙම පාෂාණය මෙවැනි හැඩයක් ගෙන ඇති බවත්, මිනිස් මොළය පර්වතයක හුරුපුරුදු හැඩයක් දකින බවත්ය.එය පැරිඩෝලියා නම් මිනිස් මොළයේ සිදුවන ක්‍රියාව නිසා සිදු වන බවත් පැවසුවේය.</p>
+
+            <div class="info-callout">
+                ඒ හා සමානව, 2010 ගණන්වලදී,අඟහරු ග්‍රහයා තුළ ඇති පාෂාණයක ඡායාරූප කීපයක් නිකුත් වුණි.එය බුද්ධ ප්‍රතිමාවක් ලෙස පෙනෙන නිසා විවිධ අය විසින් බුද්ධ ප්‍රතිමාවක් ලෙස අර්ථකථනය කරන ලදී. මේයට මානව මුහුණක්, වාඩි වී සිටින ඉරියව්වක් වැනි ලක්ෂණ සහිත විය.නාසා සහ ග්‍රහලෝක භූ විද්‍යාඥයින් තහවුරු කළේ මේවා සුළං ඛාදනය සහ උෂ්ණත්ව උච්චාවචනයන් ඇතුළු අඟහරු ග්‍රහයාගේ ආන්තික පාරිසරික තත්ත්වයන් මගින් නිර්මාණය කරන ලද ස්වාභාවික පාෂාණ සැකැස්මක් බවයි. මෙයද පැරිඩෝලියා නිසා පෙනෙන දෙයක් ලෙස විද්වතුන් නැවතත් පැහැදිලි කළේය.
+            </div>
+
+            <p> 2014 දී ගණපති සහ 2010 ගණන්වල බුදුන් යන සිදුවීම් දෙකම ස්වාභාවික අඟහරු පාෂාණ මත අහම්ඹෙන් සැකසී ඇති ප්‍රතිමා සේ පෙනෙන රූප දෙකක් බවත්,එය පැරඩෝලියා හේතුවෙන් එසේ පෙනෙන බවත් විද්‍යාඟයෝ මත පළ කලේය. </p>
+            
+            <p>මේ හා සමානම සිද්ධියක් 1976 දි සිදු විය.නාසා මඟින් අඟහරු මත ඇති මිනිස් මුහුණක් ඡායාරූප ගත කළේය.
+ඉතින් මේ සිද්ධීන් තුනම පැරඩෝලියා නිසා සිදුවූ සිදුවීම්ද?එහෙමත් නැත්තම් මේවා ඇත්තටම කවුරුන් හෝ විසින් නිර්මාණය කරන ලද දේවල්ද?
+කිසිවෙකු හරියටම අදටත් නොදනී....!</p>
+        </div>
+
+        <div class="share-buttons">
+            <span>Share via: </span>
+            <button class="btn-share fb">Facebook</button>
+            <button class="btn-share wa">WhatsApp</button>
+        </div>
+    </article>
+
+</body>
+</html>
